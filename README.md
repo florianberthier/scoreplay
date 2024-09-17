@@ -1,5 +1,11 @@
 # Instruction
 
+## Requirments
+
+- Docker 
+- Golang
+- Docker compose 
+
 ## Makefile Commands
 
  `run` *Starts the project*
