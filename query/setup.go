@@ -2,7 +2,6 @@ package query
 
 import (
 	"fmt"
-	"scoreplay/env"
 	"scoreplay/models"
 
 	"github.com/sirupsen/logrus"
@@ -20,8 +19,8 @@ type Query struct {
 	Tables Tables
 }
 
-func Setup() *Query {
-	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", env.POSTGRES_HOST, env.POSTGRES_PORT, env.POSTGRES_USER, env.POSTGRES_PASSWORD, env.POSTGRES_DB)
+func Setup(host, port, user, password, database string) *Query {
+	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, database)
 
 	db, err := gorm.Open(postgres.Open(connStr), &gorm.Config{})
 	if err != nil {

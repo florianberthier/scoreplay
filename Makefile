@@ -7,3 +7,6 @@ build:
 re:
 	docker-compose build
 	docker-compose up
+
+test:
+	go test ./...
